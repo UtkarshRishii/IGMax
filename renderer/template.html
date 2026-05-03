@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="slide-container">
+        <!-- SVG Filter for Noise Texture -->
+        <svg style="display: none;">
+            <filter id="noiseFilter">
+                <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+            </filter>
+        </svg>
+
+        <!-- Background Layers -->
+        <div class="bg-noise"></div>
+        <div class="bg-grid"></div>
+        <div class="glow glow-top"></div>
+        <div class="glow glow-bottom"></div>
+
+        <!-- Inner Frame -->
+        <div class="frame"></div>
+
+        <!-- Geometric Accents -->
+        <div class="geo geo-circle-lg"></div>
+        <div class="geo geo-diamond"></div>
+        <div class="geo geo-circle-sm"></div>
+        <div class="accent-line"></div>
+
+        <!-- Main Content -->
+        <div class="content-wrapper">
+            <div class="tag">
+                <span class="tag-dot"></span>
+                FalMax Agent
+            </div>
+
+            <h1 class="title">{{ title }}</h1>
+
+            <div class="divider">
+                <span class="divider-core"></span>
+            </div>
+
+            <p class="content">{{ content }}</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-brand">
+                <div class="brand-icon">F</div>
+                <span class="brand-name">FalMax</span>
+            </div>
+            <div class="footer-meta">
+                <div class="progress-track">
+                    <div class="progress-fill" style="width: {{ (slide_index / total_slides) * 100 }}%"></div>
+                </div>
+                <div class="pagination">
+                    <span class="current-slide">{{ slide_index }}</span>
+                    <span class="separator">/</span>
+                    <span class="total-slides">{{ total_slides }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
